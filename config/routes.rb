@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get 'messages/index'
+  devise_for :users
   root to: "messages#index" #ルートパスへのアクセスで　indexアクション呼び出す
+  resources :users, only: [:edit, :update]
 end
